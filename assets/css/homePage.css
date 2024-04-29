@@ -1,0 +1,198 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.container {
+    background-color: #00428c;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.logo-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.date-time {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 16px;
+    color: black;
+    z-index: 2;
+}
+
+.footer-background {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    bottom: 0;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 3;
+}
+
+.bulletin-board {
+    color: #00428c;
+    font-size: 42px;
+    padding: 20px 60px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: transparent;
+    z-index: 2;
+    position: relative;
+}
+
+.red-text {
+    color: #d50000;
+}
+
+/* Urgent Message Ticker Styles */
+.urgent-message-ticker {
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+@keyframes ticker {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+.urgent-message-ticker span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: ticker linear infinite;
+}
+
+.urgent-message-ticker span.long-text {
+    animation-duration: 20s;
+}
+
+.urgent-message-ticker span.short-text {
+    animation-duration: 10s;
+}
+
+/* Dropdown Menu Styles */
+.logo-background .dropdown {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    opacity: 0.5;
+    transition: opacity 0.5s;
+}
+
+.logo-background .dropbtn {
+    background-color: white;
+    color: #888888;
+    padding: 5px 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: color 0.5s;
+}
+
+.logo-background .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0;
+    transition: background-color 0.5s;
+}
+
+.logo-background .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.logo-background .dropdown-content a:hover {background-color: #f1f1f1}
+
+.logo-background .dropdown:hover {
+    opacity: 1;
+    color: white;
+}
+
+.logo-background .dropdown:hover .dropbtn {
+    color: black;
+}
+
+.logo-background .dropbtn.active {
+    color: black;
+    opacity: 1;
+}
+
+/* Mobile Specific Adjustments */
+@media (max-width: 767px) {
+    .logo img {
+        width: 80px; /* Adjust logo width as needed */
+        height: auto; /* Maintain aspect ratio */
+        position: absolute;
+        top: 10px; /* Adjust spacing from the top */
+        left: 10px; /* Adjust spacing from the left */
+    }
+
+    .dropdown {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        z-index: 2;
+    }
+
+    .dropbtn {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
+    .dropdown-content a {
+        font-size: 12px;
+    }
+
+    .bulletin-board {
+        font-size: 25px; /* Adjust for mobile readability */
+        text-align: center; /* Center text within the element */
+        padding-top: 10px; /* Provide spacing from the top content */
+        padding-bottom: 10px; /* Space before the content below */
+    }
+
+    .date-time {
+        font-size: 12px; /* Adjust font size for mobile */
+        position: absolute;
+        top: 0px; /* Place at the bottom of the logo background */
+        right: 0%; /* Center horizontally */
+        transform: translate(0, 0); /* Ensure accurate centering */
+        text-align: right;
+        width: auto; /* Allow width to adjust based on content */
+        height: auto; /* Ensure height is based on content */
+    }
+} /* This is the missing closing bracket */
+

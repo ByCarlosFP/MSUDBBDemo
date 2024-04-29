@@ -1,0 +1,19 @@
+.navigation-buttons {
+    margin-top: 20px; /* Adjust as needed */
+    display: flex;
+    justify-content: center;
+}
+
+.navigation-buttons button {
+    margin-right: 5px; /* Adjust spacing between buttons */
+}
+
+@media only screen and (max-width: 768px) {
+    .navigation-buttons {
+        flex-direction: column; /* Stack buttons vertically on smaller screens */
+    }
+
+    .navigation-buttons button {
+        margin: 5px; /* Adjust vertical spacing between buttons */
+    }
+}

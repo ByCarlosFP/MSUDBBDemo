@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<!-- Design for MSU Denver Bulletin board webpage--->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="/assets/css/homePage.css">
+    <link rel="stylesheet" href="/assets/css/adminPanel.css">
+    <link rel="stylesheet" href="/assets/css/login.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="logo-background">
+          
+          <div class="dropdown">
+              <button class="dropbtn" onclick="toggleDropdown()">•••</button>
+              <div class="dropdown-content">
+                  <a href="src/html/login.html">Login</a>
+                  <a href="src/html/adminPanel.html">Admin Panel</a>
+                  <a href="https://github.com/MattRMorgan/MSU-Denver-Bulletin-Board.github.io/tree/nodejs" target="_blank" rel="noopener noreferrer">Node JS Demo</a>
+                  <a href="src/html/spa.html">SPA Demo</a>
+              </div>
+          </div>
+
+            <div class="bulletin-board">
+                <span class="red-text">Bulletin</span> Board
+            </div>
+            <div class="date-time" id="date-time"></div>
+        </div>
+        <div class="logo">
+          <a href="index.html">
+            <img src="https://cdn.offcampusimages.com/public/upload/eagsvcpcbm1vru1k2u_taxmsbsflnehw4ztweyn_sng.png" alt="MSU Denver Logo" width="230">
+          </a>
+        </div>
+        <div class="footer-background">
+          <div id="urgentMessageDisplay" class="urgent-message-ticker"></div>
+        </div>
+    </div>
+    <script src="/assets/javascript/script.js"></script>
+</body>
+</html>

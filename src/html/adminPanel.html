@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/assets/css/adminPanel.css">
+    <link rel="stylesheet" href="/assets/css/spa.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="/index.html">
+                <img src="https://cdn.offcampusimages.com/public/upload/eagsvcpcbm1vru1k2u_taxmsbsflnehw4ztweyn_sng.png" alt="MSU Denver Logo" width="230">
+            </a>
+        </div>
+        <h1>Admin Panel</h1>
+        <!-- Dropdown Menu -->
+        <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown()">•••</button>
+            <div class="dropdown-content">
+                <a href="/index.html">Home</a>
+                <a href="/src/html/login.html">Login</a>
+                <a href="https://github.com/MattRMorgan/MSU-Denver-Bulletin-Board.github.io/tree/nodejs" target="_blank" rel="noopener noreferrer">Node JS Demo</a>
+                <a href="/src/html/spa.html">SPA Demo</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Tabs -->
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'fileUpload')">File Upload</button>
+        <button class="tablinks" onclick="openTab(event, 'textUpload')">Text Upload</button>
+        <button class="tablinks" onclick="openTab(event, 'uploadedContent')">Uploaded Content</button>
+        <button class="tablinks" onclick="openTab(event, 'urgentMessage')">Urgent Message</button> <!-- New Urgent Message Tab -->
+    </div>
+
+    <!-- Text Upload -->
+    <div id="textUpload" class="tabcontent">
+        <div class="uploadText">
+            <form action="/action_page.php">
+                <div class="form-group">
+                    <label for="userInput">Text Entry:</label>
+                    <textarea id="userInput" name="userInput" rows="4"></textarea>
+                </div>
+                <button type="button" onclick="submitContent()">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- File Upload -->
+    <div id="fileUpload" class="tabcontent">
+        <div class="uploadFile">
+            <form id="fileUploadForm">
+                <div class="form-group">
+                    <label for="file-upload">Upload File</label>
+                    <input type="file" id="file-upload" class="file-upload-btn" required>
+                </div>
+                <button type="button" onclick="submitContent()">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Files Already Uploaded -->
+    <div id="uploadedContent" class="tabcontent">
+        <div class="content-display" id="contentDisplay">
+        </div>
+    </div>
+
+  <!-- Urgent Message Form -->
+  <div id="urgentMessage" class="tabcontent">
+      <div class="urgentMessageForm">
+          <form id="urgentMessageForm" onsubmit="publishUrgentMessage(); return false;">
+              <div class="form-group">
+                  <label for="urgentMessageInput">Urgent Message:</label>
+                  <textarea id="urgentMessageInput" name="urgentMessageInput" rows="4"></textarea>
+              </div>
+              <button type="submit">Publish</button>
+          </form>
+      </div>
+  </div>
+    <script src="/assets/javascript/adminPanel.js"></script>
+    <script src="/assets/javascript/openTab.js"></script>
+    <script src="/assets/javascript/submitContent.js"></script>
+</body>
+</html>

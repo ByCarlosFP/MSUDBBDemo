@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication</title>
+    <link rel="stylesheet" href="/assets/css/login.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="/index.html">
+                <img src="https://cdn.offcampusimages.com/public/upload/eagsvcpcbm1vru1k2u_taxmsbsflnehw4ztweyn_sng.png" alt="MSU Denver Logo" width="230">
+            </a>
+        </div>
+        <h1>Authentication</h1>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown()">•••</button>
+            <div class="dropdown-content">
+                <a href="/index.html">Home</a>
+                <a href="/src/html/adminPanel.html">Admin Panel</a>
+                <a href="https://github.com/MattRMorgan/MSU-Denver-Bulletin-Board.github.io/tree/nodejs" target="_blank" rel="noopener noreferrer">Node JS Demo</a>
+                <a href="/src/html/spa.html">SPA Demo</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="login-container">
+        <form id="loginForm" onsubmit="return teacherLogin();">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="/assets/javascript/login.js"></script>
+</body>
+</html>
